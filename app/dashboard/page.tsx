@@ -1,24 +1,19 @@
-import { auth } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import { DashboardHeader } from "@/components/dashboard/header";
-import { AnalysisHistory } from "@/components/dashboard/analysis-history";
+'use client';
 
-export default async function DashboardPage() {
-  const { userId } = auth();
+import { useUser } from "@clerk/nextjs";
+import AnalyticsDashboard from "./AnalyticsDashboard";
 
-  if (!userId) {
-    redirect("/sign-in");
+export default function DashboardPage() {
+  const { user } = useUser();
+
+  if (!user) {
+    return null;
   }
 
   return (
-    <div className="flex-1 space-y-4 p-4 pt-6">
-      <DashboardHeader 
-        heading="Dashboard" 
-        text="View your website accessibility analysis history"
-      />
-      <div className="grid gap-4">
-        <AnalysisHistory />
-      </div>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold text-white mb-8">Analytics Dashboard</h1>
+      <AnalyticsDashboard userId={user.id} />
     </div>
   );
 }

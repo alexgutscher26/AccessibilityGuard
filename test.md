@@ -1,6 +1,6 @@
 
 Adding report generation features
-Creating visualization components for the results
+
 
 Adding more detailed analysis results
 

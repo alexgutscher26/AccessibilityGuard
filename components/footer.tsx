@@ -40,15 +40,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t bg-background">
-      <div className="mx-auto max-w-[750px] px-4 py-12">
+    <footer className="w-full border-t border-gray-800 bg-black">
+      <div className="mx-auto max-w-[1200px] px-4 py-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Logo and Description */}
           <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
             <Link href="/" className="w-fit">
               <Logo />
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-400">
               Making the web accessible for everyone through AI-powered testing and analysis.
             </p>
           </div>
@@ -56,13 +56,13 @@ export function Footer() {
           {/* Footer Links */}
           {footerLinks.map((group) => (
             <div key={group.title} className="flex flex-col gap-2">
-              <h3 className="font-semibold">{group.title}</h3>
+              <h3 className="font-semibold text-white">{group.title}</h3>
               <ul className="flex flex-col gap-2">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      className="text-sm text-gray-400 transition-colors hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -74,9 +74,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} AccessibilityGuard. All rights reserved.
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 md:flex-row">
+          <p className="text-sm text-gray-400">
+            {currentYear} AccessibilityGuard. All rights reserved.
           </p>
 
           {/* Social Links */}
@@ -87,7 +87,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground transition-colors hover:text-primary"
+                  className="text-gray-400 transition-colors hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}

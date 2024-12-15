@@ -1,10 +1,6 @@
 
 Adding report generation features
 
-
-Adding more detailed analysis results
-
-
 Implementing real accessibility testing with a library like axe-core
 Adding the ability to export results as PDF or CSV
 
